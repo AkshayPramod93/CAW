@@ -1,7 +1,7 @@
 # CAW
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/40d41f73-04b3-48a5-9639-35472f16708f/deploy-status)](https://app.netlify.com/sites/akshay-pramod/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/40d41f73-04b3-48a5-9639-35472f16708f/deploy-status)](https://app.netlify.com/sites/CAW-pramod/deploys)
 
 ## Development server
 

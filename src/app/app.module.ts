@@ -1,84 +1,98 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MatCheckboxModule } from "@angular/material";
-import { MatButtonModule } from "@angular/material";
-import { MatInputModule } from "@angular/material/input";
-import { MatAutocompleteModule } from "@angular/material/autocomplete";
-import { MatDatepickerModule } from "@angular/material/datepicker";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatRadioModule } from "@angular/material/radio";
-import { MatSelectModule } from "@angular/material/select";
-import { MatSliderModule } from "@angular/material/slider";
-import { MatSlideToggleModule } from "@angular/material/slide-toggle";
-import { MatMenuModule } from "@angular/material/menu";
-import { MatSidenavModule } from "@angular/material/sidenav";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatListModule } from "@angular/material/list";
-import { MatGridListModule } from "@angular/material/grid-list";
-import { MatCardModule } from "@angular/material/card";
-import { MatStepperModule } from "@angular/material/stepper";
-import { MatTabsModule } from "@angular/material/tabs";
-import { MatExpansionModule } from "@angular/material/expansion";
-import { MatButtonToggleModule } from "@angular/material/button-toggle";
-import { MatChipsModule } from "@angular/material/chips";
-import { MatIconModule } from "@angular/material/icon";
-import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
-import { MatProgressBarModule } from "@angular/material/progress-bar";
-import { MatDialogModule } from "@angular/material/dialog";
-import { MatTooltipModule } from "@angular/material/tooltip";
-import { MatSnackBarModule } from "@angular/material/snack-bar";
-import { MatTableModule } from "@angular/material/table";
-import { MatSortModule } from "@angular/material/sort";
-import { MatPaginatorModule } from "@angular/material/paginator";
-import { ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
+
+//----------------------------------Services----------------------------------
+
+import {RegisterService} from './register.service';
+import {DescService} from './desc.service';
+
+//---------------------------Material-----------------------------------------
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card'; 
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule,} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatGridListModule} from '@angular/material/grid-list'; 
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet'; 
+import {MatDividerModule} from '@angular/material/divider';
+import {MatSelectModule} from '@angular/material/select';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
+//----------------------------------------------------------------------------
+import { TeamComponent } from './team/team.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AdminComponent } from './admin/admin.component';
+import {BottomSheetOverviewExampleSheet} from './login/login.component';
+import {BottomSheetOverviewExampleSheet2} from './login/login.component';
+import {DialogOverviewExampleDialog} from './team/team.component';
+import { AboutComponent } from './about/about.component';
+import { AuthGuard } from './auth.guard';
+//import { CountdownModule } from 'ngx-countdown';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TeamComponent,
+    LoginComponent,
+    RegisterComponent,
+    AdminComponent,
+    BottomSheetOverviewExampleSheet,
+    BottomSheetOverviewExampleSheet2,
+    AboutComponent,
+    DialogOverviewExampleDialog
+  ],
+  entryComponents: [
+    BottomSheetOverviewExampleSheet,
+    BottomSheetOverviewExampleSheet2,
+    DialogOverviewExampleDialog
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
     AppRoutingModule,
-    MatCheckboxModule,
-    MatCheckboxModule,
-    MatButtonModule,
-    MatInputModule,
-    MatAutocompleteModule,
-    MatDatepickerModule,
-    MatFormFieldModule,
-    MatRadioModule,
-    MatSelectModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatMenuModule,
-    MatSidenavModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     MatToolbarModule,
-    MatListModule,
-    MatGridListModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatTabsModule,
     MatCardModule,
     MatStepperModule,
-    MatTabsModule,
-    MatExpansionModule,
-    MatButtonToggleModule,
-    MatChipsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatIconModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
-    MatDialogModule,
-    MatTooltipModule,
     MatSnackBarModule,
-    MatTableModule,
-    MatSortModule,
-    MatPaginatorModule,
-    ReactiveFormsModule
+    MatGridListModule,
+    MatDatepickerModule,
+    MatBottomSheetModule,
+    MatDividerModule, 
+    MatChipsModule,
+    MatSelectModule,
+    MatSlideToggleModule,
+    MatRadioModule,
+    MatDialogModule
+    
+    //CountdownModule
   ],
-  providers: [],
+  providers: [RegisterService,DescService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

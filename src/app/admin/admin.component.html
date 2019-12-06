@@ -1,0 +1,53 @@
+<div class="container-fluid">
+    <br>
+<br>
+        <mat-card>
+            <button mat-raised-button color="warn" style="float:right;" (click)="logout()">LOGOUT</button>
+          <p class="display-4">Projects</p>
+          
+        <mat-card class="proj" >
+          <div *ngFor="let d of desc">
+            <!-- <button mat-raised-button style="float:right;" class="btn btn-danger" (click)="openDialog()">Delete</button>
+            <button mat-raised-button style="float:center;" class="btn btn-primary" (click)="openDialog()">Open</button> -->
+            
+            <p class="display-4"><kbd style="text-transform: uppercase;" class="btn-info">{{d.pt}}</kbd></p>
+            <strong class="display-4" style="font-size:2em;color:rgb(180, 180, 180)">Description</strong>
+          <p class="display-4" style="font-size:1.2em;text-align: justify;word-wrap: break-word;">{{d.pd}}</p>
+          <strong class="display-4" style="font-size:2em;color:rgb(180, 180, 180)">DeadLine</strong>
+          <p class="display-4" style="font-size:3em;">{{d.dd}}</p>
+          <strong class="display-4" style="font-size:2em;color:rgb(180, 180, 180)">Languages</strong>
+          <p class="display-4" style="font-size:2em;">{{d.tl}}</p>
+          <strong class="display-4" style="font-size:2em;color:rgb(180, 180, 180)">Team Members</strong>
+          <p class="display-4" style="font-size:2em;">{{d.tm}}</p>
+          
+          <mat-divider></mat-divider>
+          <br>
+        </div>
+        </mat-card>
+        <br>
+        
+        </mat-card>
+        <br>
+        <!------------------------------------------------------------------------------------------------->
+        <!-- <div *ngIf="hi">
+    <mat-card >DESCRIPTION :
+        <br>
+        <p class="display-4" style="font-size:1.5em;text-align: justify;">A project consists of a concrete and organized effort motivated by a perceived opportunity when facing a problem, a need, a desire or a source of discomfort.</p> 
+      </mat-card><br>
+
+    <mat-card >DEADLINE :
+      <br>
+      <p class="display-4">JUNE 30<sup>th</sup>2019</p> 
+    </mat-card><br>
+    
+    <mat-card >TIME LEFT :<br> <countdown-timer [end]="'2019-06-30 00:00:00'" class="display-3" style="font-size:15vh auto;"></countdown-timer>
+      &nbsp;<p class="display-1" style="font-size:1.1em;float:center;">DAYS:HOURS:MINUTES:SECONDS</p>
+    </mat-card><br>
+    <mat-card >PERCENTAGE OF COMPLETION : 
+      <br>
+      <p class="display-4">47%</p>
+    </mat-card>
+  </div>
+    <br> -->
+    
+  </div>

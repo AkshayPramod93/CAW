@@ -1,0 +1,81 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  </head>
+  <mat-card>
+    <p class="display-4">Sign-In</p>
+    <button mat-raised-button class="btn btn-info" (click)="nlog()">Normal Login</button> &nbsp;
+    <button mat-raised-button class="btn btn-info" (click)="selog()">Secure Login</button> &nbsp;
+    <button mat-raised-button class="btn btn-info" (click)="adlog()">Admin Login</button>&nbsp;
+    <button mat-raised-button class="btn btn-warning" style="cursor:pointer;" align="start" routerLink="/register">Sign Up</button>
+
+        <br><br>
+        <mat-divider></mat-divider>
+        <br>
+    <div *ngIf="log">
+    <p class="display-4" style="font-size:2em;" >LOGIN</p>
+    <mat-form-field appearance="outline">
+      <mat-label>USERNAME</mat-label>
+      <input matInput placeholder="Username" #una required [(ngModel)]="value">
+      <mat-hint style="cursor:pointer;" align="start" routerLink="/register"><u>Sign Up</u></mat-hint>
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+          <mat-icon>close</mat-icon>
+        </button> 
+    </mat-form-field>&nbsp;
+
+
+    <mat-form-field appearance="outline">
+        <mat-label>PASSWORD</mat-label>
+        <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" required #passw>
+        <mat-icon matSuffix (click)="hide = !hide" style="cursor:pointer">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        
+        <mat-hint style="cursor:pointer;" align="end" (click)="openBottomSheet()">Forgot password</mat-hint>
+      </mat-form-field> &nbsp;
+      <button mat-raised-button class="btn btn-info" style="font-size:2vh;width:auto" (click)="valid(una.value,passw.value)">LOGIN</button>
+    &nbsp;<br>
+  </div>
+
+  <div *ngIf="seclog">
+    <p class="display-4" style="font-size:2em;"><kbd style="font-size:1em;background-color:firebrick;">SECURE</kbd>LOGIN<small style="font-size:.3em;">( Coming soon )</small></p>
+    <mat-form-field appearance="outline">
+        <mat-label>USERNAME</mat-label>
+        <input matInput placeholder="Username" #sl required [(ngModel)]="value2" disabled>
+        <mat-hint style="cursor:pointer;" align="start" routerLink="/register"><u>Sign Up</u></mat-hint>
+        <button mat-button *ngIf="value2" matSuffix mat-icon-button aria-label="Clear" (click)="value2=''">
+            <mat-icon>close</mat-icon>
+          </button> 
+      </mat-form-field>&nbsp;
+    <button disabled mat-raised-button class="btn btn-info" style="font-size:2vh;width:auto" (click)="valid2(sl.value)">Request</button>
+    <br>
+    <!-------------------------------------------------------SecLog---------------------------->
+    <mat-form-field appearance="outline">
+        <mat-label>BASE64</mat-label>
+        <input matInput placeholder="Credential" #sll required [(ngModel)]="value3" disabled>
+        <button mat-button *ngIf="value3" matSuffix mat-icon-button aria-label="Clear" (click)="value3=''">
+            <mat-icon>close</mat-icon>
+          </button> 
+          <mat-hint style="cursor:pointer;" align="end" (click)="openBottomSheet2()"><u>Help !</u></mat-hint>
+      </mat-form-field>&nbsp;
+    <button mat-raised-button disabled class="btn btn-info" style="font-size:2vh;width:auto" (click)="valid3(sll.value)">Login</button>
+  </div>
+
+  <div *ngIf="admlog">
+      <p class="display-4" style="font-size:2em;"><kbd style="font-size:1em;background-color:rgb(18, 141, 212);">ADMIN</kbd>LOGIN</p>
+      <mat-form-field appearance="outline">
+          <mat-label>USERNAME</mat-label>
+          <input matInput placeholder="Username" #admin required [(ngModel)]="value2">
+          <!-- <mat-hint style="cursor:pointer;" align="start" routerLink="/register"><u>Sign Up</u></mat-hint> -->
+          <button mat-button *ngIf="value2" matSuffix mat-icon-button aria-label="Clear" (click)="value2=''">
+              <mat-icon>close</mat-icon>
+            </button> 
+        </mat-form-field>&nbsp;
+      <button mat-raised-button class="btn btn-info" style="font-size:2vh;width:auto" (click)="valid4(admin.value)">Login</button>
+
+  </div>
+  </mat-card>
+
+  
+        <!-- (click)="addUser(tn.value,un.value,tln.value,tlm.value,pass.value,cpass.value)" -->

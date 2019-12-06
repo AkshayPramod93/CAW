@@ -1,0 +1,89 @@
+<!-- <mat-card class="size" style="box-shadow: none;">
+  <span style="font-size:1.3em;font-weight: bold;">Hey, I'm Akshay</span>
+  <br />
+  <p style="text-align: justify;">
+    I am a Fullstack Developer From India. I love coding on MEAN Stack, and I
+    love Angular the most. I am currently working as Junior Solutions Engineer
+    at an amazing company, <span style="color:#23AAAA;">Meltwater</span>. I specialize in developing and designing custom web components, databse administation, backend server development and deployment engineering.
+  </p>
+  <p style="text-align: justify;">
+    Do I have a life? Yes. What do I do when I'm not coding? Well,
+    I'm out there travelling on my motorcycle or probably watching Master Chef,
+    although I don't cook as much as I watch. <span style="color:silver"
+    >( I don't cook at all, but let's keep that between us )</span
+  >
+  </p>
+  <p style="text-align: justify;">That's all I have for now. More information coming soon. Building awesome websites is one of my hobby, so you will witness something really cool the next time you visit my website</p> -->
+  <!-- <img src="../assets/imgages/1.JPG" style="width:100%" /> -->
+<!-- </mat-card>
+<br> -->
+
+<!-- <div class="size">
+  <mat-card>
+<mat-form-field appearance="outline" class="example-full-width" color="accent">
+  <mat-label>Type your heart out!</mat-label>
+  <input matInput autofocus #something>
+  <button mat-flat-button color="warn" (click)="next()" style="float:right;">Done</button>
+</mat-form-field>
+</mat-card>
+</div> -->
+<div class="size" *ngIf="value == 0">
+    <mat-card>
+        <p style="font-size:5em;font-weight: bold;margin: 0 auto !important;">Hey, I'm Akshay</p>
+      <button mat-flat-button color="warn" (click)="next()" style="float:right;">Next</button>
+    </mat-card>
+  </div>
+
+<div class="size" *ngIf="value == 1">
+  <mat-card>
+      <p style="text-align: justify;font-size:1.3em;">
+          I am a Fullstack Developer From India. I love coding on MEAN Stack, and I
+          love Angular the most. I am currently working as Junior Solutions Engineer
+          at an amazing company, <span style="color:#23AAAA;">Meltwater</span>. I specialize in developing and designing custom web components, databse administation, backend server development and deployment engineering.
+        </p>
+    <button mat-flat-button color="warn" (click)="next()" style="float:right;">Next</button>
+  </mat-card>
+</div>
+
+<div class="size" *ngIf="value == 2">
+    <mat-card>
+        <p style="text-align: justify;font-size:1.3em;">
+            Do I have a life? Yes. What do I do when I'm not coding? Well,
+            I'm out there travelling on my motorcycle or probably watching Master Chef,
+            although I don't cook as much as I watch. <span style="color:silver"
+            >( I don't cook at all, but let's keep that between us )</span
+          >
+          </p>
+      <button mat-flat-button color="warn" (click)="next()" style="float:right;">Next</button>
+    </mat-card>
+  </div>
+  <div class="size" *ngIf="value == 3">
+      <mat-card>
+          <p style="text-align: justify;font-size:1.3em;">That's all I have for now. More information coming soon. Building awesome websites is one of my hobby, so you will witness something really cool the next time you visit my website</p>
+        <button mat-flat-button color="warn" (click)="next()" style="float:right;" *ngIf="value > 3">Next</button>
+        <button mat-flat-button color="warn" (click)="start()" style="float:right;" *ngIf="value == 3">Start Over</button>
+      </mat-card>
+    </div>
+<div class="content">
+    
+    <div class="card" *ngIf="value == 1">
+      <p class="title">Programmer</p>
+    </div>
+
+    <div class="card2" *ngIf="value == 2">
+      <p class="title">Designer</p>
+    </div>
+
+    <div class="card3" *ngIf="value == 3">
+      <p class="title">COMING SOON</p>
+
+    </div>
+    
+  </div>
+  <button mat-mini-fab color="warn" id="reset" (click)="start()">
+      <i class="fas fa-undo-alt" style="color:white;font-size:1em"></i>
+  </button>
+
+  <p id="copyright">&copy; Akshay Pramod</p>
+  <!-- <p class="title">Contact</p>
+  <p class="text">Coming soon</p> -->
